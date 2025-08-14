@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-08-05T19:15:04.599034",
+  "file": "generate_standard_report.py",
+  "summary": {
+    "total_functions": 11,
+    "issues_count": 0,
+    "warnings_count": 1,
+    "status": "PASS"
+  },
+  "functions_found": [
+    "_analyze_cpa_by_channel",
+    "_analyze_arpu_by_channel",
+    "_analyze_generic_metric_by_channel",
+    "_analyze_quality_users_by_channel",
+    "_analyze_retention_by_channel",
+    "_analyze_female_ratio_by_channel",
+    "_analyze_young_ratio_by_channel",
+    "_analyze_high_tier_ratio_by_channel",
+    "_analyze_good_rate_by_channel",
+    "_analyze_verified_rate_by_channel",
+    "_analyze_quality_rate_by_channel"
+  ],
+  "issues": [],
+  "warnings": [
+    {
+      "type": "inconsistent_severity_formula",
+      "function": "_analyze_cpa_by_channel",
+      "message": "_analyze_cpa_by_channel 的 severity_score 计算公式可能不一致"
+    }
+  ]
+}

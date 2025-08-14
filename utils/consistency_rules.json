@@ -1,0 +1,115 @@
+{
+  "version": "1.0",
+  "description": "代码一致性检查规则配置",
+  "rules": {
+    "channel_analysis_functions": {
+      "description": "渠道分析函数规则",
+      "patterns": [
+        "_analyze_.*_by_channel"
+      ],
+      "required_elements": {
+        "severity_score_calculation": {
+          "description": "必须计算严重程度分数",
+          "patterns": [
+            "severity_score\\s*=\\s*abs\\([^)]+\\)\\s*\\*\\s*\\(1\\s*\\+\\s*[^)]+\\*\\s*10\\)",
+            "severity_score\\s*=\\s*abs\\([^)]+\\)\\s*\\*\\s*\\([^)]+\\)"
+          ],
+          "severity": "error"
+        },
+        "severity_score_sorting": {
+          "description": "必须按严重程度分数排序",
+          "patterns": [
+            "\\.sort\\(key=lambda x: x\\[['\"]severity_score['\"]], reverse=True\\)",
+            "\\.sort\\(key=lambda x: x\\.get\\(['\"]severity_score['\"]][^)]*\\), reverse=True\\)"
+          ],
+          "anti_patterns": [
+            "\\.sort\\(key=lambda x: abs\\(x\\[['\"]weighted_impact['\"]]\\)\\)",
+            "\\.sort\\(key=lambda x: x\\[['\"]weight['\"]]\\)",
+            "\\.sort\\(key=lambda x: abs\\(x\\[['\"].*_change['\"]]\\)\\)"
+          ],
+          "severity": "error"
+        },
+        "return_structure": {
+          "description": "返回结构必须包含必要字段",
+          "required_fields": [
+            "channel_impacts",
+            "analysis_type",
+            "analysis_summary"
+          ],
+          "severity": "warning"
+        },
+        "severity_score_in_data": {
+          "description": "数据结构中必须包含severity_score字段",
+          "patterns": [
+            "'severity_score':\\s*severity_score",
+            "\"severity_score\":\\s*severity_score"
+          ],
+          "severity": "error"
+        }
+      }
+    },
+    "html_display": {
+      "description": "HTML显示格式规则",
+      "required_elements": {
+        "severity_display": {
+          "description": "HTML显示必须包含严重程度信息",
+          "patterns": [
+            "严重程度\\{[^}]*severity_score[^}]*\\}",
+            "severity_score.*严重程度"
+          ],
+          "severity": "warning"
+        },
+        "weight_display": {
+          "description": "HTML显示必须包含权重信息",
+          "patterns": [
+            "权重.*\\%",
+            "\\%权重"
+          ],
+          "severity": "warning"
+        }
+      }
+    },
+    "function_uniqueness": {
+      "description": "函数唯一性规则",
+      "no_duplicates": {
+        "description": "不能有重复的函数定义",
+        "severity": "error"
+      }
+    },
+    "severity_formula_consistency": {
+      "description": "严重程度计算公式一致性",
+      "standard_formulas": [
+        "abs(metric_change) * (1 + weight * 10)",
+        "abs(weighted_impact) * (1 + weight * 10)",
+        "(user_weight * abs(cpa_change))"
+      ],
+      "severity": "warning"
+    }
+  },
+  "exemptions": {
+    "functions": [
+      "_analyze_channels_by_anomalies",
+      "_intelligent_root_cause_analysis"
+    ],
+    "patterns": [
+      "def _.*helper.*",
+      "def _.*util.*"
+    ]
+  },
+  "auto_fix": {
+    "safe_fixes": [
+      "inconsistent_sorting",
+      "missing_return_fields",
+      "missing_display_format"
+    ],
+    "manual_fixes": [
+      "missing_severity_score",
+      "duplicate_function",
+      "inconsistent_severity_formula"
+    ]
+  },
+  "thresholds": {
+    "max_issues_for_auto_fix": 5,
+    "max_warnings_to_ignore": 3
+  }
+}

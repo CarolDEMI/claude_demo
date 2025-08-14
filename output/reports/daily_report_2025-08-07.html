@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据分析报告 - 2025-08-07</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background: #f5f7fa; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 20px; text-align: center; }
+        .module { background: white; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden; }
+        .module-header { background: #4a90e2; color: white; padding: 15px 20px; font-size: 18px; font-weight: bold; }
+        .module-content { padding: 20px; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .metric-card { background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #4a90e2; }
+        .metric-value { font-size: 24px; font-weight: bold; color: #2c3e50; }
+        .metric-label { color: #7f8c8d; font-size: 14px; }
+        .table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .table th, .table td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        .table th { background: #f8f9fa; font-weight: 600; }
+        .table tr:hover { background: #f5f5f5; }
+        .chart-container { margin: 20px 0; }
+        .progress-bar { background: #e9ecef; border-radius: 10px; height: 20px; margin: 5px 0; }
+        .progress-fill { height: 100%; border-radius: 10px; transition: width 0.3s ease; }
+        .status-good { background: #28a745; }
+        .status-normal { background: #ffc107; }
+        .status-bad { background: #dc3545; }
+        .highlight { background: #fff3cd; padding: 10px; border-radius: 5px; border-left: 4px solid #ffc107; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 数据分析报告</h1>
+            <h2>2025-08-07</h2>
+            <p>生成时间: 2025-08-14 13:56:15</p>
+        </div>
+
+        <div class="module">
+            <div class="module-header">📊 模块1: 数据概况</div>
+            <div class="module-content">
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">26,152</div>
+                        <div class="metric-label">总用户数</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">14,711</div>
+                        <div class="metric-label">数据记录数</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">35</div>
+                        <div class="metric-label">活跃渠道数</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">190</div>
+                        <div class="metric-label">活跃账户数</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header">📈 模块2: 渠道分析</div>
+            <div class="module-content">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>排名</th>
+                            <th>渠道名称</th>
+                            <th>用户数</th>
+                            <th>占比</th>
+                            <th>占比可视化</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Douyin</td>
+                            <td>10,238</td>
+                            <td>39.15%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-fill status-good" style="width: 78.3%"></div>
+                                </div>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>2</td>
+                            <td>AppStore</td>
+                            <td>4,305</td>
+                            <td>16.46%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-fill status-good" style="width: 32.92%"></div>
+                                </div>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>3</td>
+                            <td>Wangyi</td>
+                            <td>3,629</td>
+                            <td>13.88%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-fill status-good" style="width: 27.76%"></div>
+                                </div>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>4</td>
+                            <td>Xiaohongshu</td>
+                            <td>1,147</td>
+                            <td>4.39%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-fill status-good" style="width: 8.78%"></div>
+                                </div>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>5</td>
+                            <td>Huawei</td>
+                            <td>1,055</td>
+                            <td>4.03%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-fill status-good" style="width: 8.06%"></div>
+                                </div>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>6</td>
+                            <td>Chuanshanjia</td>
+                            <td>993</td>
+                            <td>3.8%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-fill status-good" style="width: 7.6%"></div>
+                                </div>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>7</td>
+                            <td>GuangdiantongPYQ</td>
+                            <td>637</td>
+                            <td>2.44%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-fill status-good" style="width: 4.88%"></div>
+                                </div>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>8</td>
+                            <td>GuangdiantongInternal</td>
+                            <td>423</td>
+                            <td>1.62%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-fill status-good" style="width: 3.24%"></div>
+                                </div>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>9</td>
+                            <td>XiaomiMarket</td>
+                            <td>411</td>
+                            <td>1.57%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-fill status-good" style="width: 3.14%"></div>
+                                </div>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>10</td>
+                            <td>ASA</td>
+                            <td>358</td>
+                            <td>1.37%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-fill status-good" style="width: 2.74%"></div>
+                                </div>
+                            </td>
+                        </tr>
+    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header">🎯 模块3: 质量分析</div>
+            <div class="module-content">
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">57.98%</div>
+                        <div class="metric-label">Good用户率</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill status-good" style="width: 57.98%"></div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">52.69%</div>
+                        <div class="metric-label">认证用户率</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill status-normal" style="width: 52.69%"></div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">46.95%</div>
+                        <div class="metric-label">Good且认证率</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill status-normal" style="width: 46.95%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight">
+                    💡 <strong>质量洞察:</strong> Good且认证率为 46.95%，有待提升
+                </div>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header">📋 模块4: 状态分布</div>
+            <div class="module-content">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div>
+                        <h3>用户状态分布</h3>
+                        <table class="table">
+                            <thead>
+                                <tr><th>状态</th><th>用户数</th><th>占比</th></tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td>good</td>
+                                    <td>15,163</td>
+                                    <td>57.98%</td>
+                                </tr>
+    
+                                <tr>
+                                    <td>未知</td>
+                                    <td>6,549</td>
+                                    <td>25.04%</td>
+                                </tr>
+    
+                                <tr>
+                                    <td>fake</td>
+                                    <td>3,891</td>
+                                    <td>14.88%</td>
+                                </tr>
+    
+                                <tr>
+                                    <td>banned</td>
+                                    <td>409</td>
+                                    <td>1.56%</td>
+                                </tr>
+    
+                                <tr>
+                                    <td>delay_ban</td>
+                                    <td>140</td>
+                                    <td>0.54%</td>
+                                </tr>
+    
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <h3>认证状态分布</h3>
+                        <table class="table">
+                            <thead>
+                                <tr><th>认证状态</th><th>用户数</th><th>占比</th></tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td>verified</td>
+                                    <td>13,779</td>
+                                    <td>52.69%</td>
+                                </tr>
+    
+                                <tr>
+                                    <td>未知</td>
+                                    <td>10,689</td>
+                                    <td>40.87%</td>
+                                </tr>
+    
+                                <tr>
+                                    <td>rejected</td>
+                                    <td>964</td>
+                                    <td>3.69%</td>
+                                </tr>
+    
+                                <tr>
+                                    <td>default</td>
+                                    <td>684</td>
+                                    <td>2.62%</td>
+                                </tr>
+    
+                                <tr>
+                                    <td>canceled</td>
+                                    <td>36</td>
+                                    <td>0.14%</td>
+                                </tr>
+    
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

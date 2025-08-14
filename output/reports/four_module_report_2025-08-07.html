@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四模块业务报告 - 2025-08-07</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f5f7fa; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; text-align: center; }
+        .report-title { font-size: 2.5em; margin-bottom: 10px; }
+        .report-date { font-size: 1.2em; opacity: 0.9; }
+        .modules-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .module { background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
+        .module-header { background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); color: white; padding: 25px; font-size: 1.5em; font-weight: bold; }
+        .module-content { padding: 30px; }
+        .module-1 .module-header { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+        .module-2 .module-header { background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); }
+        .module-3 .module-header { background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); }
+        .module-4 .module-header { background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }
+        .metrics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 20px 0; }
+        .metric-card { background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center; border-left: 4px solid #4a90e2; }
+        .metric-value { font-size: 2em; font-weight: bold; color: #2c3e50; }
+        .metric-label { color: #7f8c8d; margin-top: 5px; }
+        .table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .table th, .table td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        .table th { background: #f8f9fa; font-weight: 600; }
+        .table tr:hover { background: #f5f5f5; }
+        .progress-bar { background: #e9ecef; height: 20px; border-radius: 10px; margin: 10px 0; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(45deg, #007bff, #28a745); transition: width 0.3s ease; }
+        .chart-container { margin: 20px 0; }
+        .bar-chart { display: flex; flex-direction: column; gap: 8px; }
+        .bar-item { display: flex; align-items: center; gap: 10px; }
+        .bar-label { min-width: 120px; font-size: 0.9em; }
+        .bar { background: #e9ecef; height: 25px; border-radius: 5px; flex: 1; position: relative; }
+        .bar-fill { height: 100%; background: linear-gradient(45deg, #007bff, #28a745); border-radius: 5px; }
+        .bar-value { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 0.8em; font-weight: bold; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="report-title">📊 四模块业务数据报告</h1>
+            <p class="report-date">报告日期: 2025-08-07 | 生成时间: 2025-08-14 14:01:20</p>
+        </div>
+        
+        <div class="modules-grid">
+            <!-- 模块1: 数据概况 -->
+            <div class="module module-1">
+                <div class="module-header">📊 模块1: 数据概况</div>
+                <div class="module-content">
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-value">26,152</div>
+                            <div class="metric-label">总用户数</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">14,711</div>
+                            <div class="metric-label">数据记录数</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">35</div>
+                            <div class="metric-label">活跃渠道数</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">190</div>
+                            <div class="metric-label">活跃账户数</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 模块2: 渠道分析 -->
+            <div class="module module-2">
+                <div class="module-header">📈 模块2: 渠道分析</div>
+                <div class="module-content">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>渠道名称</th>
+                                <th>用户数</th>
+                                <th>占比</th>
+                                <th>质量率</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Douyin</td>
+                                <td>10,238</td>
+                                <td>39.15%</td>
+                                <td>49.33%</td>
+                            </tr>
+                            <tr>
+                                <td>AppStore</td>
+                                <td>4,305</td>
+                                <td>16.46%</td>
+                                <td>51.85%</td>
+                            </tr>
+                            <tr>
+                                <td>Wangyi</td>
+                                <td>3,629</td>
+                                <td>13.88%</td>
+                                <td>41.86%</td>
+                            </tr>
+                            <tr>
+                                <td>Xiaohongshu</td>
+                                <td>1,147</td>
+                                <td>4.39%</td>
+                                <td>58.59%</td>
+                            </tr>
+                            <tr>
+                                <td>Huawei</td>
+                                <td>1,055</td>
+                                <td>4.03%</td>
+                                <td>46.35%</td>
+                            </tr>
+                            <tr>
+                                <td>Chuanshanjia</td>
+                                <td>993</td>
+                                <td>3.8%</td>
+                                <td>38.27%</td>
+                            </tr>
+                            <tr>
+                                <td>GuangdiantongPY...</td>
+                                <td>637</td>
+                                <td>2.44%</td>
+                                <td>55.26%</td>
+                            </tr>
+                            <tr>
+                                <td>GuangdiantongIn...</td>
+                                <td>423</td>
+                                <td>1.62%</td>
+                                <td>21.51%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- 模块3: 质量分析 -->
+            <div class="module module-3">
+                <div class="module-header">🎯 模块3: 质量分析</div>
+                <div class="module-content">
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-value">57.98%</div>
+                            <div class="metric-label">Good用户率</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 57.98%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">52.69%</div>
+                            <div class="metric-label">认证用户率</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 52.69%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-card" style="grid-column: span 2; margin-top: 15px;">
+                        <div class="metric-value">46.95%</div>
+                        <div class="metric-label">Good且认证率 (核心指标)</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 46.95%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 模块4: 状态分布 -->
+            <div class="module module-4">
+                <div class="module-header">📋 模块4: 状态分布</div>
+                <div class="module-content">
+                    <h4>用户状态分布</h4>
+                    <div class="chart-container">
+                        <div class="bar-chart">
+                            <div class="bar-item">
+                                <div class="bar-label">good</div>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: 57.98%"></div>
+                                    <div class="bar-value">15,163</div>
+                                </div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">未知</div>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: 25.04%"></div>
+                                    <div class="bar-value">6,549</div>
+                                </div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">fake</div>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: 14.88%"></div>
+                                    <div class="bar-value">3,891</div>
+                                </div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">banned</div>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: 1.56%"></div>
+                                    <div class="bar-value">409</div>
+                                </div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">delay_ban</div>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: 0.54%"></div>
+                                    <div class="bar-value">140</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 style="margin-top: 30px;">认证状态分布</h4>
+                    <div class="chart-container">
+                        <div class="bar-chart">
+                            <div class="bar-item">
+                                <div class="bar-label">verified</div>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: 52.69%"></div>
+                                    <div class="bar-value">13,779</div>
+                                </div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">未知</div>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: 40.87%"></div>
+                                    <div class="bar-value">10,689</div>
+                                </div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">rejected</div>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: 3.69%"></div>
+                                    <div class="bar-value">964</div>
+                                </div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">default</div>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: 2.62%"></div>
+                                    <div class="bar-value">684</div>
+                                </div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">canceled</div>
+                                <div class="bar">
+                                    <div class="bar-fill" style="width: 0.14%"></div>
+                                    <div class="bar-value">36</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

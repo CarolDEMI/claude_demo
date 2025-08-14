@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Claude Demo{% endblock %}
+
+{% block content %}
+<h1>Welcome to Claude Demo</h1>
+<p>This is a simple Flask web application created as a demonstration.</p>
+
+<div>
+    <h2>API Demo</h2>
+    <button class="btn" onclick="fetchHello()">Get Hello Message</button>
+    <button class="btn" onclick="sendEcho()">Send Echo Test</button>
+    <div id="response" class="response" style="display: none;"></div>
+</div>
+
+<script>
+async function fetchHello() {
+    try {
+        const response = await fetch('/api/hello');
+        const data = await response.json();
+        showResponse(JSON.stringify(data, null, 2));
+    } catch (error) {
+        showResponse('Error: ' + error.message);
+    }
+}
+
+async function sendEcho() {
+    try {
+        const testData = {
+            message: "Hello from the frontend!",
+            timestamp: new Date().toISOString()
+        };
+        
+        const response = await fetch('/api/echo', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(testData)
+        });
+        
+        const data = await response.json();
+        showResponse(JSON.stringify(data, null, 2));
+    } catch (error) {
+        showResponse('Error: ' + error.message);
+    }
+}
+
+function showResponse(text) {
+    const responseDiv = document.getElementById('response');
+    responseDiv.textContent = text;
+    responseDiv.style.display = 'block';
+}
+</script>
+{% endblock %}

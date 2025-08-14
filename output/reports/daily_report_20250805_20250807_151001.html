@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>每日业务数据报告 - 2025-08-05</title>
+    <style>
+        body { 
+            font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif; 
+            margin: 0; padding: 20px; background-color: #f5f7fa; line-height: 1.4; font-size: 13px;
+        }
+        .container { 
+            max-width: 1200px; margin: 0 auto; background: white; 
+            padding: 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .header { 
+            text-align: center; border-bottom: 3px solid #3498db; 
+            padding-bottom: 20px; margin-bottom: 30px;
+        }
+        .module { 
+            margin: 40px 0; background: #f8f9fc; padding: 25px; 
+            border-radius: 8px; border-left: 4px solid #3498db;
+        }
+        .module h2 { 
+            color: #2c3e50; margin-top: 0; font-size: 18px;
+        }
+        .metrics-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+            gap: 15px; margin: 20px 0;
+        }
+        .metric-card { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; padding: 15px; border-radius: 6px; text-align: center;
+        }
+        .metric-card .icon { font-size: 16px; margin-bottom: 5px; }
+        .metric-card .value { font-size: 16px; font-weight: bold; margin: 5px 0; }
+        .metric-card .label { font-size: 11px; opacity: 0.9; }
+        .anomaly-item { 
+            background: #fff3cd; border: 1px solid #ffeaa7; 
+            padding: 15px; margin: 10px 0; border-radius: 5px;
+        }
+        .anomaly-high { background: #f8d7da; border-color: #f5c6cb; }
+        table { 
+            width: 100%; border-collapse: collapse; margin-top: 20px; 
+            background: white; border-radius: 8px; overflow: hidden;
+        }
+        th { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; padding: 15px; text-align: left;
+        }
+        .rules-note {
+            background: #e8f4fd; border: 1px solid #bee5eb; 
+            padding: 15px; margin: 20px 0; border-radius: 5px; font-size: 12px;
+            color: #0c5460;
+        }
+        td { padding: 12px; border-bottom: 1px solid #ecf0f1; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 每日业务数据报告</h1>
+            <p>📅 2025-08-05 | ⏰ 2025-08-07 15:10:01</p>
+        </div>
+        
+        <div class="rules-note">
+            ✅ <strong>报告规范确认</strong>: 认证率=13,965.0÷17,098.0=81.68% | 
+            次留率基于Good且认证用户 | 用户质量基于Good且认证用户
+        </div>
+        
+        <!-- 第一部分：核心指标 -->
+        <div class="module">
+            <h2>📊 模块一：核心指标</h2>
+            
+            <h3 style="font-size: 14px; margin: 15px 0 10px 0;">🎯 核心业务</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="icon">⭐</div>
+                    <div class="value">13,965.0</div>
+                    <div class="label">Good且认证用户数</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">💰</div>
+                    <div class="value">¥47.00</div>
+                    <div class="label">CPA</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">📈</div>
+                    <div class="value">¥7.65</div>
+                    <div class="label">ARPU</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🔄</div>
+                    <div class="value">65.35%</div>
+                    <div class="label">次留率</div>
+                </div>
+            </div>
+            
+            <h3 style="font-size: 14px; margin: 15px 0 10px 0;">👥 用户质量</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="icon">👩</div>
+                    <div class="value">41.46%</div>
+                    <div class="label">女性占比</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🧑‍💼</div>
+                    <div class="value">33.13%</div>
+                    <div class="label">年轻占比（20-23岁）</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🏙️</div>
+                    <div class="value">57.44%</div>
+                    <div class="label">高线城市占比</div>
+                </div>
+            </div>
+            
+            <h3 style="font-size: 14px; margin: 15px 0 10px 0;">🎯 注册转化</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="icon">✅</div>
+                    <div class="value">61.18%</div>
+                    <div class="label">Good率</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🔐</div>
+                    <div class="value">81.68%</div>
+                    <div class="label">认证率</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🎯</div>
+                    <div class="value">49.97%</div>
+                    <div class="label">Good且认证率</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第二部分：异常分析 -->
+        <div class="module">
+            <h2>🚨 模块二：异常分析</h2>
+            
+            <!-- 异常检测结果部分已整合到智能问题定位 -->
+            <h3>🎯 问题定位</h3>
+                    <div style="margin: 15px 0;">
+                        <h4 style="color: #dc2626; margin: 0 0 8px 0; font-size: 14px;">
+                            ⚠️ 认证率 异常
+                        </h4><p style="margin: 5px 0; color: #666; font-size: 13px;">低于近7天最低值</p>• <strong>Douyin</strong>: 85.00% (下降0.53pp), 7,279Good用户, 贡献24.2%<br>• <strong>Wangyi</strong>: 75.77% (下降1.53pp), 2,026Good用户, 贡献19.4%<br>• <strong>AppStore</strong>: 79.51% (下降0.69pp), 2,938Good用户, 贡献12.7%<br></div>
+        </div>
+        
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ecf0f1; color: #7f8c8d; font-size: 14px;">
+            <p>📊 报告规范说明：</p>
+            <ul>
+                <li><strong>认证率</strong> = Good且认证用户数 ÷ Good用户数（不是总用户数）</li>
+                <li><strong>次留率</strong> = Good且认证用户留存数 ÷ Good且认证用户数</li>
+                <li><strong>用户质量指标</strong> = 基于Good且认证用户计算</li>
+                <li><strong>异常检测</strong> = 使用IQR（四分位距）方法，检测模块1中所有核心指标（14天历史数据）</li>
+                <li><strong>智能渠道分析</strong> = 基于异常检测结果，自动分析ARPU/CPA/用户数异常的渠道影响，按影响程度降序排序</li>
+                <li><strong>渠道分析范围</strong> = 仅包含用户数≥50的渠道，按加权影响/绝对变化排序</li>
+            </ul>
+            <p><small>⚠️ 本报告严格按照内置规范生成，确保数据准确性和一致性</small></p>
+        </div>
+    </div>
+</body>
+</html>

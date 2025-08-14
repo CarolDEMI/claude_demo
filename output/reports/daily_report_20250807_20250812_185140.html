@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>每日业务数据报告 - 2025-08-07</title>
+    <style>
+        body { 
+            font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif; 
+            margin: 0; padding: 20px; background-color: #f5f7fa; line-height: 1.4; font-size: 13px;
+        }
+        .container { 
+            max-width: 1200px; margin: 0 auto; background: white; 
+            padding: 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .header { 
+            text-align: center; border-bottom: 3px solid #3498db; 
+            padding-bottom: 20px; margin-bottom: 30px;
+        }
+        .module { 
+            margin: 40px 0; background: #f8f9fc; padding: 25px; 
+            border-radius: 8px; border-left: 4px solid #3498db;
+        }
+        .module h2 { 
+            color: #2c3e50; margin-top: 0; font-size: 18px;
+        }
+        .metrics-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+            gap: 15px; margin: 20px 0;
+        }
+        .metric-card { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; padding: 15px; border-radius: 6px; text-align: center;
+        }
+        .metric-card .icon { font-size: 16px; margin-bottom: 5px; }
+        .metric-card .value { font-size: 16px; font-weight: bold; margin: 5px 0; }
+        .metric-card .label { font-size: 11px; opacity: 0.9; }
+        .anomaly-item { 
+            background: #fff3cd; border: 1px solid #ffeaa7; 
+            padding: 15px; margin: 10px 0; border-radius: 5px;
+        }
+        .anomaly-high { background: #f8d7da; border-color: #f5c6cb; }
+        table { 
+            width: 100%; border-collapse: collapse; margin-top: 20px; 
+            background: white; border-radius: 8px; overflow: hidden;
+        }
+        th { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; padding: 15px; text-align: left;
+        }
+        .rules-note {
+            background: #e8f4fd; border: 1px solid #bee5eb; 
+            padding: 15px; margin: 20px 0; border-radius: 5px; font-size: 12px;
+            color: #0c5460;
+        }
+        td { padding: 12px; border-bottom: 1px solid #ecf0f1; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 每日业务数据报告</h1>
+            <p>📅 2025-08-07 | ⏰ 2025-08-12 18:51:40</p>
+        </div>
+        
+        <div class="rules-note">
+            ✅ <strong>报告规范确认</strong>: 认证率=12,278.0÷15,163.0=80.97% | 
+            次留率基于Good且认证用户 | 用户质量基于Good且认证用户
+        </div>
+        
+        <!-- 第一部分：核心指标 -->
+        <div class="module">
+            <h2>📊 模块一：核心指标</h2>
+            
+            <h3 style="font-size: 14px; margin: 15px 0 10px 0;">🎯 核心业务</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="icon">⭐</div>
+                    <div class="value">12,278.0</div>
+                    <div class="label">Good且认证用户数</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">💰</div>
+                    <div class="value">¥49.37</div>
+                    <div class="label">CPA</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">📈</div>
+                    <div class="value">¥6.72</div>
+                    <div class="label">ARPU</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🔄</div>
+                    <div class="value">64.33%</div>
+                    <div class="label">次留率</div>
+                </div>
+            </div>
+            
+            <h3 style="font-size: 14px; margin: 15px 0 10px 0;">👥 用户质量</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="icon">👩</div>
+                    <div class="value">39.06%</div>
+                    <div class="label">女性占比</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🧑‍💼</div>
+                    <div class="value">32.91%</div>
+                    <div class="label">年轻占比（20-23岁）</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🏙️</div>
+                    <div class="value">57.60%</div>
+                    <div class="label">高线城市占比</div>
+                </div>
+            </div>
+            
+            <h3 style="font-size: 14px; margin: 15px 0 10px 0;">🎯 注册转化</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="icon">✅</div>
+                    <div class="value">57.98%</div>
+                    <div class="label">Good率</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🔐</div>
+                    <div class="value">80.97%</div>
+                    <div class="label">认证率</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🎯</div>
+                    <div class="value">46.95%</div>
+                    <div class="label">Good且认证率</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第二部分：异常分析 -->
+        <div class="module">
+            <h2>🚨 模块二：异常分析</h2>
+            
+            <!-- 异常检测结果部分已整合到智能问题定位 -->
+            <h3>🎯 问题定位</h3>
+                    <div style="margin: 15px 0;">
+                        <h4 style="color: #dc2626; margin: 0 0 8px 0; font-size: 14px;">
+                            ⚠️ Good且认证用户数 异常
+                        </h4><p style="margin: 5px 0; color: #666; font-size: 13px;">低于近7天最低值 | 偏离近期均值9.5%</p>• <strong>Douyin</strong>: 5,050 (下降348.0用户), 贡献23.5%<br>• <strong>AppStore</strong>: 2,232 (下降144.0用户), 贡献4.3%<br>• <strong>Wangyi</strong>: 1,519 (下降63.0用户), 贡献1.3%<br></div>
+                    <div style="margin: 15px 0;">
+                        <h4 style="color: #dc2626; margin: 0 0 8px 0; font-size: 14px;">
+                            ⚠️ CPA 异常
+                        </h4><p style="margin: 5px 0; color: #666; font-size: 13px;">高于近7天最高值 | 偏离近期均值5.4%</p>• <strong>Douyin</strong>: CPA¥84.5 (高16.7元), 5,050用户<br>• <strong>Xiaohongshu</strong>: CPA¥80.2 (高12.4元), 672用户<br>• <strong>Bilibili</strong>: CPA¥81.0 (高13.2元), 161用户<br></div>
+                    <div style="margin: 15px 0;">
+                        <h4 style="color: #dc2626; margin: 0 0 8px 0; font-size: 14px;">
+                            ⚠️ ARPU 异常
+                        </h4><p style="margin: 5px 0; color: #666; font-size: 13px;">日变化83.8%(下降) | 低于近7天最低值 | 偏离近期均值64.6%</p>• <strong>Douyin</strong>: ¥6.73 (下降33.57元), 5,050用户, 贡献41.0%<br>• <strong>AppStore</strong>: ¥6.92 (下降35.63元), 2,232用户, 贡献19.2%<br>• <strong>Wangyi</strong>: ¥5.04 (下降21.93元), 1,519用户, 贡献8.1%<br></div>
+                    <div style="margin: 15px 0;">
+                        <h4 style="color: #dc2626; margin: 0 0 8px 0; font-size: 14px;">
+                            ⚠️ 女性占比 异常
+                        </h4><p style="margin: 5px 0; color: #666; font-size: 13px;">低于近7天最低值 | 偏离近期均值7.5%</p><strong>问题渠道:</strong><br>• Oppo: 29.6% (下降13.7pp, 81用户, 严重程度14.6)<br>• Weibo: 31.2% (下降11.7pp, 64用户, 严重程度12.3)<br>• HarmonyOS: 17.9% (下降5.3pp, 67用户, 严重程度5.6)<br></div>
+                    <div style="margin: 15px 0;">
+                        <h4 style="color: #dc2626; margin: 0 0 8px 0; font-size: 14px;">
+                            ⚠️ Good率 异常
+                        </h4><p style="margin: 5px 0; color: #666; font-size: 13px;">低于近7天最低值</p>• <strong>Douyin</strong>: 58.67% (下降3.44pp), 10.2K用户, 贡献82.5%<br>• <strong>Chuanshanjia</strong>: 48.44% (下降10.23pp), 993用户, 贡献23.8%<br>• <strong>AppStore</strong>: 65.06% (下降0.64pp), 4,305用户, 贡献6.5%<br></div>
+                    <div style="margin: 15px 0;">
+                        <h4 style="color: #dc2626; margin: 0 0 8px 0; font-size: 14px;">
+                            ⚠️ 认证率 异常
+                        </h4><p style="margin: 5px 0; color: #666; font-size: 13px;">低于近7天最低值</p>• <strong>Chuanshanjia</strong>: 79.00% (下降7.22pp), 481Good用户, 贡献64.0%<br>• <strong>Douyin</strong>: 84.07% (下降0.37pp), 6,007Good用户, 贡献40.9%<br>• <strong>ASA</strong>: 69.38% (下降8.86pp), 209Good用户, 贡献34.1%<br></div>
+                    <div style="margin: 15px 0;">
+                        <h4 style="color: #dc2626; margin: 0 0 8px 0; font-size: 14px;">
+                            ⚠️ Good且认证率 异常
+                        </h4><p style="margin: 5px 0; color: #666; font-size: 13px;">低于近7天最低值 | 偏离近期均值5.7%</p>• <strong>Douyin</strong>: 49.33% (下降3.11pp), 10.2K用户, 贡献83.1%<br>• <strong>Chuanshanjia</strong>: 38.27% (下降12.32pp), 993.0用户, 贡献31.9%<br>• <strong>ASA</strong>: 40.50% (下降9.21pp), 358.0用户, 贡献8.6%<br></div>
+        </div>
+        <!-- 第三部分：账户分析 -->
+        <div class="module">
+            <h2>📊 模块三：账户数据监测 - Douyin</h2>
+            
+            <h3>🔍 ARPU降低且年轻占比升高的账户</h3>
+            <div style="margin: 20px 0;">
+                <p><strong>检测到 8 个异常账户</strong>（按Good且认证用户数排序）</p>
+            </div>
+            <div style="background: #fff; border: 1px solid #ddd; border-radius: 8px; 
+                        padding: 16px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div style="margin-bottom: 8px;">
+                    <strong>账户：</strong>1804176308765705<br>
+                    <strong>账户属性：</strong>Android 男
+                </div>
+                
+                <div style="margin-bottom: 12px;">
+                    <strong>Good且认证用户数：</strong>304人<br>
+                    <span style="color: #666; font-size: 12px;">
+                        同属性占比：18.3% | 渠道内占比：6.1%
+                    </span>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 12px; border-radius: 4px; margin-bottom: 8px;">
+                    <strong>23岁以下占比变化：</strong><br>    当日：23.0% ↑ (+2.3%)<br>    前7日均值：20.7%<br>
+                </div>
+                
+                <div style="color: #dc3545; font-weight: bold; margin-top: 8px;">
+                    ARPU影响（前7日均 - 今日）：¥7.01 - ¥3.77 (¥-3.24)
+                </div>
+            </div>
+            <div style="background: #fff; border: 1px solid #ddd; border-radius: 8px; 
+                        padding: 16px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div style="margin-bottom: 8px;">
+                    <strong>账户：</strong>1795207510398042<br>
+                    <strong>账户属性：</strong>Android 男
+                </div>
+                
+                <div style="margin-bottom: 12px;">
+                    <strong>Good且认证用户数：</strong>287人<br>
+                    <span style="color: #666; font-size: 12px;">
+                        同属性占比：17.3% | 渠道内占比：5.7%
+                    </span>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 12px; border-radius: 4px; margin-bottom: 8px;">
+                    <strong>23岁以下占比变化：</strong><br>    当日：4.5% ↑ (+1.0%)<br>    前7日均值：3.5%<br>
+                </div>
+                
+                <div style="color: #dc3545; font-weight: bold; margin-top: 8px;">
+                    ARPU影响（前7日均 - 今日）：¥10.07 - ¥9.64 (¥-0.43)
+                </div>
+            </div>
+            <div style="background: #fff; border: 1px solid #ddd; border-radius: 8px; 
+                        padding: 16px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div style="margin-bottom: 8px;">
+                    <strong>账户：</strong>1766033704178696<br>
+                    <strong>账户属性：</strong>Android 女
+                </div>
+                
+                <div style="margin-bottom: 12px;">
+                    <strong>Good且认证用户数：</strong>269人<br>
+                    <span style="color: #666; font-size: 12px;">
+                        同属性占比：20.1% | 渠道内占比：5.4%
+                    </span>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 12px; border-radius: 4px; margin-bottom: 8px;">
+                    <strong>23岁以下占比变化：</strong><br>    当日：46.8% ↑ (+1.1%)<br>    前7日均值：45.7%<br>
+                </div>
+                
+                <div style="color: #dc3545; font-weight: bold; margin-top: 8px;">
+                    ARPU影响（前7日均 - 今日）：¥7.46 - ¥3.68 (¥-3.78)
+                </div>
+            </div>
+            <div style="background: #fff; border: 1px solid #ddd; border-radius: 8px; 
+                        padding: 16px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div style="margin-bottom: 8px;">
+                    <strong>账户：</strong>1815050140929348<br>
+                    <strong>账户属性：</strong>Android 男
+                </div>
+                
+                <div style="margin-bottom: 12px;">
+                    <strong>Good且认证用户数：</strong>253人<br>
+                    <span style="color: #666; font-size: 12px;">
+                        同属性占比：15.2% | 渠道内占比：5.1%
+                    </span>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 12px; border-radius: 4px; margin-bottom: 8px;">
+                    <strong>23岁以下占比变化：</strong><br>    当日：23.3% ↑ (+15.5%)<br>    前7日均值：7.8%<br>
+                </div>
+                
+                <div style="color: #dc3545; font-weight: bold; margin-top: 8px;">
+                    ARPU影响（前7日均 - 今日）：¥7.39 - ¥4.77 (¥-2.62)
+                </div>
+            </div>
+            <div style="background: #fff; border: 1px solid #ddd; border-radius: 8px; 
+                        padding: 16px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div style="margin-bottom: 8px;">
+                    <strong>账户：</strong>1814408943776908<br>
+                    <strong>账户属性：</strong>Android 女
+                </div>
+                
+                <div style="margin-bottom: 12px;">
+                    <strong>Good且认证用户数：</strong>167人<br>
+                    <span style="color: #666; font-size: 12px;">
+                        同属性占比：12.5% | 渠道内占比：3.3%
+                    </span>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 12px; border-radius: 4px; margin-bottom: 8px;">
+                    <strong>23岁以下占比变化：</strong><br>    当日：62.3% ↑ (+2.8%)<br>    前7日均值：59.5%<br>
+                </div>
+                
+                <div style="color: #dc3545; font-weight: bold; margin-top: 8px;">
+                    ARPU影响（前7日均 - 今日）：¥6.91 - ¥5.52 (¥-1.39)
+                </div>
+            </div>
+            <div style="background: #fff; border: 1px solid #ddd; border-radius: 8px; 
+                        padding: 16px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div style="margin-bottom: 8px;">
+                    <strong>账户：</strong>1796106801861771<br>
+                    <strong>账户属性：</strong>Android 男
+                </div>
+                
+                <div style="margin-bottom: 12px;">
+                    <strong>Good且认证用户数：</strong>162人<br>
+                    <span style="color: #666; font-size: 12px;">
+                        同属性占比：9.8% | 渠道内占比：3.2%
+                    </span>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 12px; border-radius: 4px; margin-bottom: 8px;">
+                    <strong>23岁以下占比变化：</strong><br>    当日：23.5% ↑ (+12.7%)<br>    前7日均值：10.8%<br>
+                </div>
+                
+                <div style="color: #dc3545; font-weight: bold; margin-top: 8px;">
+                    ARPU影响（前7日均 - 今日）：¥9.30 - ¥6.80 (¥-2.50)
+                </div>
+            </div>
+            <div style="background: #fff; border: 1px solid #ddd; border-radius: 8px; 
+                        padding: 16px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div style="margin-bottom: 8px;">
+                    <strong>账户：</strong>1814408938789387<br>
+                    <strong>账户属性：</strong>iOS 女
+                </div>
+                
+                <div style="margin-bottom: 12px;">
+                    <strong>Good且认证用户数：</strong>156人<br>
+                    <span style="color: #666; font-size: 12px;">
+                        同属性占比：14.2% | 渠道内占比：3.1%
+                    </span>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 12px; border-radius: 4px; margin-bottom: 8px;">
+                    <strong>23岁以下占比变化：</strong><br>    当日：60.9% ↑ (+9.9%)<br>    前7日均值：51.0%<br>
+                </div>
+                
+                <div style="color: #dc3545; font-weight: bold; margin-top: 8px;">
+                    ARPU影响（前7日均 - 今日）：¥3.91 - ¥1.76 (¥-2.15)
+                </div>
+            </div>
+            <div style="background: #fff; border: 1px solid #ddd; border-radius: 8px; 
+                        padding: 16px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div style="margin-bottom: 8px;">
+                    <strong>账户：</strong>1796106800887828<br>
+                    <strong>账户属性：</strong>Android 女
+                </div>
+                
+                <div style="margin-bottom: 12px;">
+                    <strong>Good且认证用户数：</strong>142人<br>
+                    <span style="color: #666; font-size: 12px;">
+                        同属性占比：10.6% | 渠道内占比：2.8%
+                    </span>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 12px; border-radius: 4px; margin-bottom: 8px;">
+                    <strong>23岁以下占比变化：</strong><br>    当日：46.5% ↑ (+7.1%)<br>    前7日均值：39.4%<br>
+                </div>
+                
+                <div style="color: #dc3545; font-weight: bold; margin-top: 8px;">
+                    ARPU影响（前7日均 - 今日）：¥11.30 - ¥9.63 (¥-1.67)
+                </div>
+            </div>
+        </div>
+        <!-- 第四部分：素材分析 -->
+        <div class="module">
+            <h2>📊 模块四：素材分析</h2>
+            
+            <h3>🏆 Top 20素材排行榜</h3>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 12px;">
+                    <thead>
+                        <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                            <th style="padding: 10px 8px; text-align: center; border: 1px solid #ddd;">排名</th>
+                            <th style="padding: 10px 8px; text-align: left; border: 1px solid #ddd;">素材ID</th>
+                            <th style="padding: 10px 8px; text-align: right; border: 1px solid #ddd;">Good认证</th>
+                            <th style="padding: 10px 8px; text-align: right; border: 1px solid #ddd;">消耗</th>
+                            <th style="padding: 10px 8px; text-align: right; border: 1px solid #ddd;">CPA</th>
+                            <th style="padding: 10px 8px; text-align: right; border: 1px solid #ddd;">ARPU</th>
+                            <th style="padding: 10px 8px; text-align: right; border: 1px solid #ddd;">次留率</th>
+                            <th style="padding: 10px 8px; text-align: right; border: 1px solid #ddd;">女比</th>
+                            <th style="padding: 10px 8px; text-align: right; border: 1px solid #ddd;">白领比</th>
+                            <th style="padding: 10px 8px; text-align: right; border: 1px solid #ddd;">iOS比</th>
+                            <th style="padding: 10px 8px; text-align: center; border: 1px solid #ddd;">昨日排名</th>
+                            <th style="padding: 10px 8px; text-align: center; border: 1px solid #ddd;">变化</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">1</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43774573">43774573</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">351</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥10,453</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥29.78</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥9.02</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">66.4%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">28.2%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">42.7%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">0.0%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">1</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #6c757d; font-weight: bold;">=</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">2</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43795456">43795456</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">337</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥6,342</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥18.82</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥3.73</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">69.4%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">22.6%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">54.9%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">100.0%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">4</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #28a745; font-weight: bold;">↑2</td>
+                        </tr>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">3</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43806904">43806904</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">318</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥8,803</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥27.68</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥4.56</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">56.3%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">31.8%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">41.5%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">0.0%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">2</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #dc3545; font-weight: bold;">↓1</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">4</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43785288">43785288</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">292</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥4,574</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥15.66</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥2.84</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">66.1%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">18.2%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">45.2%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">100.0%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">3</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #dc3545; font-weight: bold;">↓1</td>
+                        </tr>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">5</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43743092">43743092</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">117</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥8,921</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥76.25</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥6.32</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">47.9%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">23.9%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">35.0%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">22.2%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">31</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #28a745; font-weight: bold;">↑26</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">6</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43824201">43824201</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">91</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥10,777</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥118.43</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥11.00</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">69.2%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">86.8%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">52.7%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">0.0%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">10</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #28a745; font-weight: bold;">↑4</td>
+                        </tr>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">7</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43809632">43809632</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">91</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥6,145</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥67.53</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥6.95</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">63.7%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">92.3%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">39.6%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">57.1%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">5</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #dc3545; font-weight: bold;">↓2</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">8</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="72508886">72508886</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">83</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥8,879</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥106.97</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥16.00</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">73.5%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">3.6%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">53.0%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">0.0%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">50</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #28a745; font-weight: bold;">↑42</td>
+                        </tr>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">9</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="72508566">72508566</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">80</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥7,274</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥90.93</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥12.54</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">70.0%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">80.0%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">47.5%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">6.3%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">-</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #ffc107; font-weight: bold;">⭐新进榜</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">10</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43794829">43794829</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">79</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥5,759</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥72.89</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥0.96</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">58.2%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">59.5%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">40.5%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">58.2%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">13</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #28a745; font-weight: bold;">↑3</td>
+                        </tr>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">11</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43774748">43774748</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">79</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥2,233</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥28.26</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥8.52</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">57.0%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">51.9%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">44.3%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">0.0%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">18</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #28a745; font-weight: bold;">↑7</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">12</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43838067">43838067</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">78</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥6,830</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥87.56</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥8.91</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">71.8%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">83.3%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">34.6%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">71.8%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">6</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #dc3545; font-weight: bold;">↓6</td>
+                        </tr>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">13</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43696026">43696026</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">76</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥7,636</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥100.47</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥4.71</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">71.1%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">2.6%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">47.4%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">51.3%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">19</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #28a745; font-weight: bold;">↑6</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">14</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43838642">43838642</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">75</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥5,041</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥67.21</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥6.72</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">54.7%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">12.0%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">36.0%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">100.0%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">-</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #ffc107; font-weight: bold;">⭐新进榜</td>
+                        </tr>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">15</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43816913">43816913</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">74</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥6,969</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥94.18</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥7.95</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">63.5%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">56.8%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">41.9%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">10.8%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">8</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #dc3545; font-weight: bold;">↓7</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">16</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43800029">43800029</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">72</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥5,444</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥75.61</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥3.56</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">48.6%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">1.4%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">40.3%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">43.1%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">29</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #28a745; font-weight: bold;">↑13</td>
+                        </tr>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">17</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43829505">43829505</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">70</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥4,955</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥70.78</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥3.51</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">57.1%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">10.0%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">27.1%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">5.7%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">28</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #28a745; font-weight: bold;">↑11</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">18</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43756033">43756033</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">63</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥6,228</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥98.86</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥21.16</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">65.1%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">95.2%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">39.7%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">36.5%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">26</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #28a745; font-weight: bold;">↑8</td>
+                        </tr>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">19</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="72508850">72508850</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">59</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥5,581</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥94.60</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥9.07</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">78.0%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">3.4%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">69.5%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">0.0%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">-</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #ffc107; font-weight: bold;">⭐新进榜</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">20</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd; font-family: monospace; font-size: 10px; word-break: break-all; min-width: 150px;" title="43791545">43791545</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">59</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥3,506</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥59.42</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">¥3.93</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">42.4%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">0.0%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">30.5%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">23.7%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">16</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #dc3545; font-weight: bold;">↓4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>🔍 排名变化分析</h3><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+                <div style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border: none; border-left: 4px solid #28a745; border-radius: 8px; padding: 16px;">
+                    <h4 style="color: #155724; margin: 0 0 12px 0;">🔥 上升最快</h4>
+                    <div><strong>72508886...</strong></div>
+                    <div>变化: ↑42 (83用户)</div>
+                    <div>CPA: ¥106.97</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border: none; border-left: 4px solid #dc3545; border-radius: 8px; padding: 16px;">
+                    <h4 style="color: #721c24; margin: 0 0 12px 0;">📉 下降最快</h4>
+                    <div><strong>43816913...</strong></div>
+                    <div>变化: ↓7 (74用户)</div>
+                    <div>CPA: ¥94.18</div>
+                </div></div>
+                <div style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); border: none; border-left: 4px solid #ffc107; border-radius: 8px; padding: 16px; margin: 20px 0;">
+                    <h4 style="color: #856404; margin: 0 0 12px 0;">⭐ 新进榜素材</h4>
+                    <div style="margin-bottom: 8px;">
+                        • <strong>72508566...</strong> (Douyin) 
+                        - 80用户, CPA¥90.93
+                    </div>
+                    <div style="margin-bottom: 8px;">
+                        • <strong>43838642...</strong> (Douyin) 
+                        - 75用户, CPA¥67.21
+                    </div>
+                    <div style="margin-bottom: 8px;">
+                        • <strong>72508850...</strong> (Douyin) 
+                        - 59用户, CPA¥94.60
+                    </div></div>
+                <div style="background: linear-gradient(135deg, #e2e3ff 0%, #c5ceff 100%); border: none; border-left: 4px solid #6f42c1; border-radius: 8px; padding: 16px; margin: 20px 0;">
+                    <h4 style="color: #4c1d95; margin: 0 0 12px 0;">👩 女性用户集中</h4>
+                    <div><strong>43756033...</strong></div>
+                    <div>女比: 95.2% (适合女性向产品)</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #e2e3ff 0%, #c5ceff 100%); border: none; border-left: 4px solid #6f42c1; border-radius: 8px; padding: 16px; margin: 20px 0;">
+                    <h4 style="color: #4c1d95; margin: 0 0 12px 0;">📱 iOS用户集中</h4>
+                    <div><strong>43795456...</strong></div>
+                    <div>iOS比: 100.0% (高端用户聚集)</div>
+                </div>
+        </div>
+        
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ecf0f1; color: #7f8c8d; font-size: 14px;">
+            <p>📊 报告规范说明：</p>
+            <ul>
+                <li><strong>认证率</strong> = Good且认证用户数 ÷ Good用户数（不是总用户数）</li>
+                <li><strong>次留率</strong> = Good且认证用户留存数 ÷ Good且认证用户数</li>
+                <li><strong>用户质量指标</strong> = 基于Good且认证用户计算</li>
+                <li><strong>异常检测</strong> = 使用IQR（四分位距）方法，检测模块1中所有核心指标（14天历史数据）</li>
+                <li><strong>智能渠道分析</strong> = 基于异常检测结果，自动分析ARPU/CPA/用户数异常的渠道影响，按影响程度降序排序</li>
+                <li><strong>渠道分析范围</strong> = 仅包含用户数≥50的渠道，按加权影响/绝对变化排序</li>
+            </ul>
+            <p><small>⚠️ 本报告严格按照内置规范生成，确保数据准确性和一致性</small></p>
+        </div>
+    </div>
+</body>
+</html>

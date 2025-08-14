@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>每日业务数据报告 - 2025-08-07</title>
+    <style>
+        body { 
+            font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif; 
+            margin: 0; padding: 20px; background-color: #f5f7fa; line-height: 1.4; font-size: 13px;
+        }
+        .container { 
+            max-width: 1200px; margin: 0 auto; background: white; 
+            padding: 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .header { 
+            text-align: center; border-bottom: 3px solid #3498db; 
+            padding-bottom: 20px; margin-bottom: 30px;
+        }
+        .module { 
+            margin: 40px 0; background: #f8f9fc; padding: 25px; 
+            border-radius: 8px; border-left: 4px solid #3498db;
+        }
+        .module h2 { 
+            color: #2c3e50; margin-top: 0; font-size: 18px;
+        }
+        .metrics-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+            gap: 15px; margin: 20px 0;
+        }
+        .metric-card { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; padding: 15px; border-radius: 6px; text-align: center;
+        }
+        .metric-card .icon { font-size: 16px; margin-bottom: 5px; }
+        .metric-card .value { font-size: 16px; font-weight: bold; margin: 5px 0; }
+        .metric-card .label { font-size: 11px; opacity: 0.9; }
+        .account-card {
+            background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px; 
+            padding: 12px; margin: 10px 0; font-size: 12px;
+        }
+        table { 
+            width: 100%; border-collapse: collapse; margin-top: 20px; 
+            background: white; border-radius: 8px; overflow: hidden;
+        }
+        th { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; padding: 15px; text-align: left;
+        }
+        .rules-note {
+            background: #e8f4fd; border: 1px solid #bee5eb; 
+            padding: 15px; margin: 20px 0; border-radius: 5px; font-size: 12px;
+            color: #0c5460;
+        }
+        td { padding: 12px; border-bottom: 1px solid #ecf0f1; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 每日业务数据报告</h1>
+            <p>📅 2025-08-07 | ⏰ 2025-08-14 14:11:48</p>
+        </div>
+        
+        <div class="rules-note">
+            ✅ <strong>报告规范确认</strong>: 认证率=12,278÷15,163=80.97% | 
+            次留率基于Good且认证用户 | 用户质量基于Good且认证用户
+        </div>
+        
+        <!-- 第一部分：核心指标 -->
+        <div class="module">
+            <h2>📊 模块一：核心指标</h2>
+            
+            <h3 style="font-size: 14px; margin: 15px 0 10px 0;">🎯 核心业务</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="icon">⭐</div>
+                    <div class="value">12,278</div>
+                    <div class="label">Good且认证用户数</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">💰</div>
+                    <div class="value">¥--</div>
+                    <div class="label">CPA</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">📈</div>
+                    <div class="value">¥--</div>
+                    <div class="label">ARPU</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🔄</div>
+                    <div class="value">0.00%</div>
+                    <div class="label">次留率（None）</div>
+                </div>
+            </div>
+            
+            <h3 style="font-size: 14px; margin: 15px 0 10px 0;">👥 用户质量</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="icon">👩</div>
+                    <div class="value">--%</div>
+                    <div class="label">女性占比</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🧑‍💼</div>
+                    <div class="value">--%</div>
+                    <div class="label">年轻占比（20-23岁）</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🏙️</div>
+                    <div class="value">--%</div>
+                    <div class="label">高线城市占比</div>
+                </div>
+            </div>
+            
+            <h3 style="font-size: 14px; margin: 15px 0 10px 0;">🎯 注册转化</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="icon">✅</div>
+                    <div class="value">57.98%</div>
+                    <div class="label">Good率</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🔐</div>
+                    <div class="value">80.97%</div>
+                    <div class="label">认证率</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🎯</div>
+                    <div class="value">46.95%</div>
+                    <div class="label">Good且认证率</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第二部分：异常分析 -->
+        <div class="module">
+            <h2>🚨 模块二：异常分析</h2>
+            
+            <h3>🎯 问题定位</h3>
+            <div style="margin: 15px 0;">
+                <h4 style="color: #28a745; margin: 0 0 8px 0; font-size: 14px;">
+                    ✅ 基础指标状态
+                </h4>
+                <p style="margin: 5px 0; color: #666; font-size: 13px;">基于2025-08-07的数据表现</p>
+                
+                <div style="background: #d4edda; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #28a745;">
+                    <h4 style="margin: 0 0 10px 0; color: #155724;">📊 核心指标总结</h4>
+                    <div style="display: flex; gap: 30px; align-items: center; flex-wrap: wrap; font-size: 14px; margin-bottom: 10px;">
+                        <div><strong>总用户:</strong> 26,152人</div>
+                        <div><strong>Good率:</strong> 57.98%</div>
+                        <div><strong>认证率:</strong> 80.97%</div>
+                        <div><strong>Good且认证率:</strong> 46.95%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第三部分：账户数据监测 -->
+        <div class="module">
+            <h2>📊 模块三：账户数据监测</h2>
+            
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 15px;">
+                <h3 style="margin: 0;">🔍 重点账户表现监测</h3>
+            </div>
+            
+            <div style="background: #fff8e1; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #ff9800;">
+                <h4 style="margin: 0 0 10px 0; color: #e65100;">📊 账户概览</h4>
+                <div style="display: flex; gap: 30px; align-items: center; flex-wrap: wrap; font-size: 14px; margin-bottom: 10px;">
+                    <div><strong>监测账户数:</strong> 20个</div>
+                    <div><strong>活跃账户:</strong> 20个</div>
+                </div>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h4 style="color: #2c3e50;">🏢 Top账户表现 (按Good且认证用户数排序)</h4>
+                <div class="account-card">
+                    <div style="margin-bottom: 6px;">
+                        <strong>#1 </strong><br>
+                        <span style="color: #666;">渠道: AppStore</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 6px;">
+                        <strong>Good且认证:</strong> 2,232人<br>
+                        <span style="color: #666; font-size: 11px;">总用户: 4,305人 | 质量率: 51.8%</span>
+                    </div>
+                    
+                    <div style="background: #e9ecef; padding: 8px; border-radius: 4px; font-size: 11px;">
+                        账户表现: 优秀
+                        <br>质量用户占比: 51.8%
+                    </div>
+                </div>
+                <div class="account-card">
+                    <div style="margin-bottom: 6px;">
+                        <strong>#2 315894</strong><br>
+                        <span style="color: #666;">渠道: Wangyi</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 6px;">
+                        <strong>Good且认证:</strong> 843人<br>
+                        <span style="color: #666; font-size: 11px;">总用户: 2,302人 | 质量率: 36.6%</span>
+                    </div>
+                    
+                    <div style="background: #e9ecef; padding: 8px; border-radius: 4px; font-size: 11px;">
+                        账户表现: 一般
+                        <br>质量用户占比: 36.6%
+                    </div>
+                </div>
+                <div class="account-card">
+                    <div style="margin-bottom: 6px;">
+                        <strong>#3 315817</strong><br>
+                        <span style="color: #666;">渠道: Wangyi</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 6px;">
+                        <strong>Good且认证:</strong> 676人<br>
+                        <span style="color: #666; font-size: 11px;">总用户: 1,327人 | 质量率: 50.9%</span>
+                    </div>
+                    
+                    <div style="background: #e9ecef; padding: 8px; border-radius: 4px; font-size: 11px;">
+                        账户表现: 优秀
+                        <br>质量用户占比: 50.9%
+                    </div>
+                </div>
+                <div class="account-card">
+                    <div style="margin-bottom: 6px;">
+                        <strong>#4 </strong><br>
+                        <span style="color: #666;">渠道: Huawei</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 6px;">
+                        <strong>Good且认证:</strong> 489人<br>
+                        <span style="color: #666; font-size: 11px;">总用户: 1,055人 | 质量率: 46.4%</span>
+                    </div>
+                    
+                    <div style="background: #e9ecef; padding: 8px; border-radius: 4px; font-size: 11px;">
+                        账户表现: 良好
+                        <br>质量用户占比: 46.4%
+                    </div>
+                </div>
+                <div class="account-card">
+                    <div style="margin-bottom: 6px;">
+                        <strong>#5 180417632816...</strong><br>
+                        <span style="color: #666;">渠道: Douyin</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 6px;">
+                        <strong>Good且认证:</strong> 340人<br>
+                        <span style="color: #666; font-size: 11px;">总用户: 744人 | 质量率: 45.7%</span>
+                    </div>
+                    
+                    <div style="background: #e9ecef; padding: 8px; border-radius: 4px; font-size: 11px;">
+                        账户表现: 良好
+                        <br>质量用户占比: 45.7%
+                    </div>
+                </div>
+                <div class="account-card">
+                    <div style="margin-bottom: 6px;">
+                        <strong>#6 180417630876...</strong><br>
+                        <span style="color: #666;">渠道: Douyin</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 6px;">
+                        <strong>Good且认证:</strong> 304人<br>
+                        <span style="color: #666; font-size: 11px;">总用户: 939人 | 质量率: 32.4%</span>
+                    </div>
+                    
+                    <div style="background: #e9ecef; padding: 8px; border-radius: 4px; font-size: 11px;">
+                        账户表现: 一般
+                        <br>质量用户占比: 32.4%
+                    </div>
+                </div>
+                <div class="account-card">
+                    <div style="margin-bottom: 6px;">
+                        <strong>#7 179520751039...</strong><br>
+                        <span style="color: #666;">渠道: Douyin</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 6px;">
+                        <strong>Good且认证:</strong> 287人<br>
+                        <span style="color: #666; font-size: 11px;">总用户: 528人 | 质量率: 54.4%</span>
+                    </div>
+                    
+                    <div style="background: #e9ecef; padding: 8px; border-radius: 4px; font-size: 11px;">
+                        账户表现: 优秀
+                        <br>质量用户占比: 54.4%
+                    </div>
+                </div>
+                <div class="account-card">
+                    <div style="margin-bottom: 6px;">
+                        <strong>#8 176603370417...</strong><br>
+                        <span style="color: #666;">渠道: Douyin</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 6px;">
+                        <strong>Good且认证:</strong> 269人<br>
+                        <span style="color: #666; font-size: 11px;">总用户: 934人 | 质量率: 28.8%</span>
+                    </div>
+                    
+                    <div style="background: #e9ecef; padding: 8px; border-radius: 4px; font-size: 11px;">
+                        账户表现: 一般
+                        <br>质量用户占比: 28.8%
+                    </div>
+                </div>
+                <div class="account-card">
+                    <div style="margin-bottom: 6px;">
+                        <strong>#9 181505014092...</strong><br>
+                        <span style="color: #666;">渠道: Douyin</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 6px;">
+                        <strong>Good且认证:</strong> 253人<br>
+                        <span style="color: #666; font-size: 11px;">总用户: 471人 | 质量率: 53.7%</span>
+                    </div>
+                    
+                    <div style="background: #e9ecef; padding: 8px; border-radius: 4px; font-size: 11px;">
+                        账户表现: 优秀
+                        <br>质量用户占比: 53.7%
+                    </div>
+                </div>
+                <div class="account-card">
+                    <div style="margin-bottom: 6px;">
+                        <strong>#10 179520751252...</strong><br>
+                        <span style="color: #666;">渠道: Douyin</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 6px;">
+                        <strong>Good且认证:</strong> 228人<br>
+                        <span style="color: #666; font-size: 11px;">总用户: 531人 | 质量率: 42.9%</span>
+                    </div>
+                    
+                    <div style="background: #e9ecef; padding: 8px; border-radius: 4px; font-size: 11px;">
+                        账户表现: 良好
+                        <br>质量用户占比: 42.9%
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第四部分：素材分析 -->
+        <div class="module">
+            <h2>📊 模块四：素材分析</h2>
+            
+            <h3>🏆 素材数据概览</h3>
+            <div style="background: #fff; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px; margin: 15px 0;">
+                <div style="text-align: center; color: #666; padding: 40px;">
+                    <div style="font-size: 48px; margin-bottom: 15px;">📋</div>
+                    <div style="font-size: 16px; margin-bottom: 10px;">素材数据暂无</div>
+                    <div style="font-size: 13px; color: #999;">
+                        当前数据源中未包含素材维度信息<br>
+                        建议接入素材数据表以获得完整的素材分析报告
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: #e3f2fd; padding: 15px; border-radius: 6px; border-left: 3px solid #2196f3; margin-top: 20px;">
+                <strong style="color: #1565c0;">💡 数据说明:</strong><br>
+                <span style="color: #666; font-size: 13px;">• 素材分析模块需要包含素材ID、消耗、效果等维度的数据支持</span><br>
+                <span style="color: #666; font-size: 13px;">• 建议在数据源中增加素材维度以启用完整的素材分析功能</span><br>
+                <span style="color: #666; font-size: 13px;">• 目前可通过渠道维度间接分析不同流量来源的效果表现</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

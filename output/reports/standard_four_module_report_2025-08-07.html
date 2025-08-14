@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>每日业务数据报告 - 2025-08-07</title>
+    <style>
+        body { 
+            font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif; 
+            margin: 0; padding: 20px; background-color: #f5f7fa; line-height: 1.4; font-size: 13px;
+        }
+        .container { 
+            max-width: 1200px; margin: 0 auto; background: white; 
+            padding: 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .header { 
+            text-align: center; border-bottom: 3px solid #3498db; 
+            padding-bottom: 20px; margin-bottom: 30px;
+        }
+        .module { 
+            margin: 40px 0; background: #f8f9fc; padding: 25px; 
+            border-radius: 8px; border-left: 4px solid #3498db;
+        }
+        .module h2 { 
+            color: #2c3e50; margin-top: 0; font-size: 18px;
+        }
+        .metrics-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+            gap: 15px; margin: 20px 0;
+        }
+        .metric-card { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; padding: 15px; border-radius: 6px; text-align: center;
+        }
+        .metric-card .icon { font-size: 16px; margin-bottom: 5px; }
+        .metric-card .value { font-size: 16px; font-weight: bold; margin: 5px 0; }
+        .metric-card .label { font-size: 11px; opacity: 0.9; }
+        .anomaly-item { 
+            background: #fff3cd; border: 1px solid #ffeaa7; 
+            padding: 15px; margin: 10px 0; border-radius: 5px;
+        }
+        .anomaly-high { background: #f8d7da; border-color: #f5c6cb; }
+        table { 
+            width: 100%; border-collapse: collapse; margin-top: 20px; 
+            background: white; border-radius: 8px; overflow: hidden;
+        }
+        th { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; padding: 15px; text-align: left;
+        }
+        .rules-note {
+            background: #e8f4fd; border: 1px solid #bee5eb; 
+            padding: 15px; margin: 20px 0; border-radius: 5px; font-size: 12px;
+            color: #0c5460;
+        }
+        td { padding: 12px; border-bottom: 1px solid #ecf0f1; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 每日业务数据报告</h1>
+            <p>📅 2025-08-07 | ⏰ 2025-08-14 14:09:24</p>
+        </div>
+        
+        <div class="rules-note">
+            ✅ <strong>报告规范确认</strong>: 认证率=12,278÷15,163=80.97% | 
+            次留率基于Good且认证用户 | 用户质量基于Good且认证用户
+        </div>
+        
+        <!-- 第一部分：核心指标 -->
+        <div class="module">
+            <h2>📊 模块一：核心指标</h2>
+            
+            <h3 style="font-size: 14px; margin: 15px 0 10px 0;">🎯 核心业务</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="icon">⭐</div>
+                    <div class="value">12,278</div>
+                    <div class="label">Good且认证用户数</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">💰</div>
+                    <div class="value">¥--</div>
+                    <div class="label">CPA</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">📈</div>
+                    <div class="value">¥--</div>
+                    <div class="label">ARPU</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🔄</div>
+                    <div class="value">--%</div>
+                    <div class="label">次留率（暂无数据）</div>
+                </div>
+            </div>
+            
+            <h3 style="font-size: 14px; margin: 15px 0 10px 0;">👥 用户质量</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="icon">👩</div>
+                    <div class="value">--%</div>
+                    <div class="label">女性占比</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🧑‍💼</div>
+                    <div class="value">--%</div>
+                    <div class="label">年轻占比（20-23岁）</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🏙️</div>
+                    <div class="value">--%</div>
+                    <div class="label">高线城市占比</div>
+                </div>
+            </div>
+            
+            <h3 style="font-size: 14px; margin: 15px 0 10px 0;">🎯 注册转化</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="icon">✅</div>
+                    <div class="value">57.98%</div>
+                    <div class="label">Good率</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🔐</div>
+                    <div class="value">80.97%</div>
+                    <div class="label">认证率</div>
+                </div>
+                <div class="metric-card">
+                    <div class="icon">🎯</div>
+                    <div class="value">46.95%</div>
+                    <div class="label">Good且认证率</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第二部分：异常分析 -->
+        <div class="module">
+            <h2>🚨 模块二：异常分析</h2>
+            
+            <h3>🎯 问题定位</h3>
+            <div style="margin: 15px 0;">
+                <h4 style="color: #28a745; margin: 0 0 8px 0; font-size: 14px;">
+                    ✅ 核心指标状态正常
+                </h4>
+                <p style="margin: 5px 0; color: #666; font-size: 13px;">基于2025-08-07的数据分析，各项核心指标表现稳定</p>
+                
+                <div style="background: #d4edda; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #28a745;">
+                    <h4 style="margin: 0 0 10px 0; color: #155724;">📊 关键指标总览</h4>
+                    <div style="display: flex; gap: 30px; align-items: center; flex-wrap: wrap; font-size: 14px;">
+                        <div><strong>总用户数:</strong> 26,152人</div>
+                        <div><strong>Good用户:</strong> 15,163人</div>
+                        <div><strong>认证用户:</strong> 13,779人</div>
+                        <div><strong>Good且认证:</strong> 12,278人</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第三部分：渠道分析 -->
+        <div class="module">
+            <h2>📊 模块三：渠道数据分析</h2>
+            
+            <h3>🏆 Top 10渠道表现</h3>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 12px;">
+                    <thead>
+                        <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                            <th style="padding: 10px 8px; text-align: center; border: 1px solid #ddd;">排名</th>
+                            <th style="padding: 10px 8px; text-align: left; border: 1px solid #ddd;">渠道名称</th>
+                            <th style="padding: 10px 8px; text-align: right; border: 1px solid #ddd;">用户数</th>
+                            <th style="padding: 10px 8px; text-align: right; border: 1px solid #ddd;">占比</th>
+                            <th style="padding: 10px 8px; text-align: right; border: 1px solid #ddd;">Good且认证</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">1</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">Douyin</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">10,238</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">39.15%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">5,050</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">2</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">AppStore</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">4,305</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">16.46%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">2,232</td>
+                        </tr>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">3</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">Wangyi</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">3,629</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">13.88%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">1,519</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">4</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">Xiaohongshu</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">1,147</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">4.39%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">672</td>
+                        </tr>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">5</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">Huawei</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">1,055</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">4.03%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">489</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">6</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">Chuanshanjia</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">993</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">3.8%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">380</td>
+                        </tr>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">7</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">GuangdiantongPYQ</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">637</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">2.44%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">352</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">8</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">GuangdiantongInternal</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">423</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">1.62%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">91</td>
+                        </tr>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">9</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">XiaomiMarket</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">411</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">1.57%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">170</td>
+                        </tr>
+                        <tr style="background-color: #f8f9fa;">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">10</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">ASA</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">358</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">1.37%</td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">145</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- 第四部分：数据概览 -->
+        <div class="module">
+            <h2>📊 模块四：数据概览</h2>
+            
+            <h3>📈 整体数据表现</h3>
+            <div style="background: #fff; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px; margin: 15px 0;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 6px;">
+                        <div style="font-size: 24px; font-weight: bold; color: #3498db; margin-bottom: 5px;">26,152</div>
+                        <div style="font-size: 13px; color: #666;">总用户数</div>
+                    </div>
+                    <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 6px;">
+                        <div style="font-size: 24px; font-weight: bold; color: #e74c3c; margin-bottom: 5px;">57.98%</div>
+                        <div style="font-size: 13px; color: #666;">Good率</div>
+                    </div>
+                    <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 6px;">
+                        <div style="font-size: 24px; font-weight: bold; color: #f39c12; margin-bottom: 5px;">52.69%</div>
+                        <div style="font-size: 13px; color: #666;">认证率</div>
+                    </div>
+                    <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 6px;">
+                        <div style="font-size: 24px; font-weight: bold; color: #27ae60; margin-bottom: 5px;">46.95%</div>
+                        <div style="font-size: 13px; color: #666;">Good且认证率</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px; padding: 15px; background: #e8f4fd; border-radius: 6px; border-left: 3px solid #2196f3;">
+                    <strong style="color: #1565c0;">💡 数据洞察:</strong><br>
+                    <span style="color: #666; font-size: 13px;">• 当日总用户规模达到26,152人，表现稳定</span><br>
+                    <span style="color: #666; font-size: 13px;">• Good且认证率为46.95%，达到12,278高质量用户</span><br>
+                    <span style="color: #666; font-size: 13px;">• 主要流量来源为Douyin，占比39.15%</span><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

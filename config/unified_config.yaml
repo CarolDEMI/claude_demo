@@ -1,0 +1,110 @@
+anomaly_detection:
+  history_days: 14
+  method: quartile
+  monitored_metrics:
+  - quality_users
+  - cpa
+  - arpu_after_tax
+  - retention_rate
+  - good_rate
+  - verified_rate
+  - quality_rate
+  quartile_multiplier: 1.5
+business_definitions:
+  female_user_condition: gender = "female" AND status = "good" AND verification_status
+    = "verified"
+  good_user_condition: status = "good"
+  high_tier_cities:
+  - 超一线
+  - 一线
+  - 二线
+  high_tier_city_condition: dengji IN ("超一线", "一线", "二线") AND status = "good" AND
+    verification_status = "verified"
+  paying_user_condition: status = "good" AND verification_status = "verified" AND
+    zizhu_revenue_1_aftertax > 0
+  quality_user_condition: status = "good" AND verification_status = "verified"
+  retention_condition: status = "good" AND verification_status = "verified"
+  retention_field: is_returned_1_day
+  tier1_cities:
+  - 超一线
+  - 一线
+  tier2_cities:
+  - 二线
+  verified_user_condition: verification_status = "verified"
+  young_age_definition: 24岁以下
+  young_age_groups:
+  - 20-
+  - 20~23
+  young_user_condition: age_group IN ("20-", "20~23") AND status = "good" AND verification_status
+    = "verified"
+calculation_rules:
+  arpu_denominator: quality_users
+  cpa_denominator: quality_users
+  retention_denominator: quality_users
+  retention_numerator: retained_quality_users
+  user_quality_base: quality_users
+data_sources:
+  cost_table: dwd_ttx_market_cash_cost_i_d
+  database_path: ./data/data.db
+  primary_table: cpz_qs_newuser_channel_i_d
+last_updated: '2025-07-28T15:01:51.327934'
+report_template:
+  modules:
+  - id: overview_metrics
+    name: 模块一：大盘指标
+    sections:
+    - metrics:
+      - quality_users
+      - cpa
+      - arpu_after_tax
+      - retention_rate
+      name: MAIN KPI
+    - metrics:
+      - female_ratio
+      - young_ratio
+      - high_tier_ratio
+      name: 用户质量
+    - metrics:
+      - good_rate
+      - verified_rate
+      - quality_rate
+      name: 注册转化
+  - id: anomaly_detection
+    name: 模块二：异常指标展示和渠道分析
+    sections:
+    - description: 基于14天历史数据，超出1.5倍四分位距视为异常
+      name: 异常检测（四分位数方法）
+    - description: 各渠道对大盘异常指标的影响程度
+      name: 渠道影响分析
+  - enabled: false
+    id: future_module
+    name: 模块三：待扩展模块
+validation_rules:
+  logic_checks:
+  - quality_users <= good_users
+  - quality_users <= verified_users
+  - paying_users <= quality_users
+  range_checks:
+    arpu_after_tax:
+      max: 1000
+      min: 0
+      warning_range:
+      - 1
+      - 50
+    female_ratio:
+      max: 100
+      min: 0
+      warning_range:
+      - 20
+      - 80
+    retention_rate:
+      max: 100
+      min: 0
+      warning_range:
+      - 10
+      - 60
+  required_fields:
+  - total_users
+  - quality_users
+  - revenue_after_tax
+version: '1.0'

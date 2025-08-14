@@ -1,0 +1,1221 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日业务数据报告 - 2025-07-27</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .report-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        /* 头部样式 */
+        .report-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .report-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .report-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #fff, #e0e6ed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .report-subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .report-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .meta-icon {
+            font-size: 1.2em;
+        }
+        
+        /* 导航样式 */
+        .report-nav {
+            background: #f8f9fa;
+            padding: 0 40px;
+            border-bottom: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            overflow-x: auto;
+        }
+        
+        .nav-item {
+            white-space: nowrap;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 15px 0;
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: #007bff;
+            border-bottom-color: #007bff;
+        }
+        
+        /* 主内容样式 */
+        .main-content {
+            padding: 40px;
+        }
+        
+        .module-container {
+            margin-bottom: 50px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+        }
+        
+        .module-header {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px 30px;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .module-header h2 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .module-meta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .date {
+            background: #6c757d;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        /* 性能徽章 */
+        .performance-badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .performance-badge.grade-a { background: #28a745; color: white; }
+        .performance-badge.grade-b { background: #17a2b8; color: white; }
+        .performance-badge.grade-c { background: #ffc107; color: #212529; }
+        .performance-badge.grade-d { background: #dc3545; color: white; }
+        
+        /* 异常徽章 */
+        .anomaly-badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .anomaly-badge.normal {
+            background: #28a745;
+            color: white;
+        }
+        
+        .anomaly-badge.anomaly_detected {
+            background: #dc3545;
+            color: white;
+        }
+        
+        /* 指标网格 */
+        .metrics-section {
+            margin-bottom: 40px;
+        }
+        
+        .metrics-section h3 {
+            color: #2c3e50;
+            margin: 20px 30px 15px 30px;
+            font-size: 1.4em;
+            border-left: 4px solid #007bff;
+            padding-left: 15px;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 30px 20px 30px;
+        }
+        
+        .metrics-grid.main-kpi {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        }
+        
+        .metrics-grid.user-quality {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .metrics-grid.conversion {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #007bff, #28a745);
+        }
+        
+        /* 不同类别卡片样式 */
+        .main-kpi-card::before {
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+        }
+        
+        .quality-card::before {
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
+        }
+        
+        .conversion-card::before {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+        }
+        
+        .main-kpi-card {
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .quality-card {
+            border-left: 4px solid #9b59b6;
+        }
+        
+        .conversion-card {
+            border-left: 4px solid #3498db;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .metric-icon {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .metric-content {
+            flex: 1;
+        }
+        
+        .metric-name {
+            font-size: 0.9em;
+            color: #6c757d;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .metric-value {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .metric-desc {
+            font-size: 0.8em;
+            color: #868e96;
+            line-height: 1.4;
+        }
+        
+        /* 趋势分析 */
+        .trend-section {
+            padding: 30px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .trend-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+        
+        .trend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .comparison-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .comparison-card h4 {
+            color: #495057;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .comparison-metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .comparison-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+        }
+        
+        .comparison-item.significant {
+            background: rgba(220, 53, 69, 0.1);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .change-indicator {
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        .change-indicator:contains("+") {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .change-indicator:contains("-") {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        /* 性能评分 */
+        .performance-section {
+            padding: 30px;
+            border-top: 1px solid #e9ecef;
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+        }
+        
+        .performance-summary {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .score-display {
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+        }
+        
+        .score-number {
+            font-size: 3em;
+            font-weight: 700;
+            color: #007bff;
+        }
+        
+        .score-total {
+            font-size: 1.2em;
+            color: #6c757d;
+        }
+        
+        .score-grade {
+            margin-left: 15px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+        
+        .progress-bar {
+            background: #e9ecef;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #007bff, #28a745);
+            transition: width 0.5s ease;
+        }
+        
+        /* 异常检测样式 */
+        .no-anomaly-message {
+            text-align: center;
+            padding: 60px 30px;
+            color: #28a745;
+        }
+        
+        .success-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        /* 四分位数方法相关样式 */
+        .method-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .method-info p {
+            margin: 0;
+            color: #1565c0;
+            font-size: 0.9em;
+        }
+        
+        .current-value.increase {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+        
+        .current-value.decrease {
+            color: #388e3c;
+            font-weight: bold;
+        }
+        
+        .normal-range {
+            font-family: monospace;
+            background: #f5f5f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        .deviation-indicator.severe {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+        
+        .deviation-indicator.moderate {
+            color: #f57c00;
+            font-weight: bold;
+        }
+        
+        .metric-desc {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .quartile-legend {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .quartile-legend h4 {
+            color: #495057;
+            margin-bottom: 15px;
+        }
+        
+        .quartile-legend ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .quartile-legend li {
+            margin-bottom: 8px;
+            color: #6c757d;
+        }
+        
+        .anomaly-overview {
+            padding: 30px;
+        }
+        
+        .overview-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .stat-item.high-severity {
+            background: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 2em;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        
+        .metrics-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .metric-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+        }
+        
+        .metric-item.severity-high {
+            border-left: 4px solid #dc3545;
+            background: #fef9f9;
+        }
+        
+        .metric-item.severity-medium {
+            border-left: 4px solid #ffc107;
+            background: #fffdf7;
+        }
+        
+        /* 表格样式 */
+        .anomalies-table {
+            padding: 30px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #495057;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .severity-badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .severity-badge.high {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .severity-badge.medium {
+            background: #ffc107;
+            color: #212529;
+        }
+        
+        .change-indicator.increase {
+            color: #dc3545;
+        }
+        
+        .change-indicator.decrease {
+            color: #28a745;
+        }
+        
+        /* 渠道影响分析 */
+        .channel-impact-analysis {
+            padding: 30px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .impact-section {
+            margin-bottom: 40px;
+        }
+        
+        .impact-summary {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .channel-contributions table {
+            margin-top: 15px;
+        }
+        
+        .major-impact {
+            background: rgba(220, 53, 69, 0.05) !important;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .impact-score {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .score-bar {
+            height: 6px;
+            background: linear-gradient(45deg, #007bff, #28a745);
+            border-radius: 3px;
+            min-width: 20px;
+            transition: width 0.3s ease;
+        }
+        
+        .score-text {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        /* 建议措施 */
+        .recommendations-section {
+            padding: 30px;
+            border-top: 1px solid #e9ecef;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+        }
+        
+        .recommendations-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .recommendation-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #007bff;
+        }
+        
+        .rec-number {
+            background: #007bff;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .rec-text {
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+        
+        /* 错误部分 */
+        .error-section {
+            padding: 30px 40px;
+            background: #f8d7da;
+            border-top: 1px solid #f5c6cb;
+        }
+        
+        .error-item {
+            background: white;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .error-module {
+            font-weight: 600;
+            color: #721c24;
+            margin-bottom: 10px;
+        }
+        
+        .error-message {
+            color: #721c24;
+            font-size: 0.9em;
+        }
+        
+        /* 页脚 */
+        .report-footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+        
+        .footer-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .generation-time {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            opacity: 1;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .report-header,
+            .main-content,
+            .report-footer {
+                padding: 20px;
+            }
+            
+            .report-nav {
+                padding: 0 20px;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            .trend-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .performance-summary {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .overview-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-info {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* 隐藏滚动条但保持功能 */
+        .nav-list::-webkit-scrollbar {
+            height: 3px;
+        }
+        
+        .nav-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .nav-list::-webkit-scrollbar-thumb {
+            background: #dee2e6;
+            border-radius: 3px;
+        }
+        
+        .nav-list::-webkit-scrollbar-thumb:hover {
+            background: #adb5bd;
+        }
+    </style>
+        
+</head>
+<body>
+    <div class="report-container">
+        
+        <header class="report-header">
+            <div class="header-content">
+                <h1 class="report-title">每日业务数据报告</h1>
+                <p class="report-subtitle">基于模块化架构的智能业务数据分析</p>
+                <div class="report-meta">
+                    <div class="meta-item">
+                        <span class="meta-icon">📅</span>
+                        <span>报告日期: 2025-07-27</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-icon">⏰</span>
+                        <span>生成时间: 2025-07-29 16:30:14</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-icon">📊</span>
+                        <span>模块数量: 1/1</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-icon">✅</span>
+                        <span>成功率: 100%</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        
+        <nav class="report-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#userbehavioranalysismodule" class="nav-link">📋 UserBehaviorAnalysisModule</a></li>
+            </ul>
+        </nav>
+        
+        
+        <main class="main-content">
+            
+        <div class="module">
+            <h2>👥 用户行为分析</h2>
+            
+            <!-- 关键洞察 -->
+            <div class="insights-section">
+                <h3>💡 关键洞察</h3>
+        <div class="insight-item">• 最佳渠道：Douyin（iOS），行为评分85.0</div>
+            </div>
+            
+            <!-- 操作系统偏好分析 -->
+            <h3>📱 操作系统用户行为对比</h3>
+            <div class="metrics-grid">
+        
+            <div class="metric-card">
+                <div class="icon">🤖</div>
+                <div class="value">0</div>
+                <div class="label"> 用户</div>
+                <div class="sub-metrics">
+                    <small>Good率: nan%</small><br>
+                    <small>女性比例: nan%</small><br>
+                    <small>ARPU: ¥nan</small>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="icon">🤖</div>
+                <div class="value">15,597</div>
+                <div class="label">android 用户</div>
+                <div class="sub-metrics">
+                    <small>Good率: 55.1%</small><br>
+                    <small>女性比例: 25.9%</small><br>
+                    <small>ARPU: ¥8.04</small>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="icon">🤖</div>
+                <div class="value">170</div>
+                <div class="label">harmonyos 用户</div>
+                <div class="sub-metrics">
+                    <small>Good率: 52.9%</small><br>
+                    <small>女性比例: 13.5%</small><br>
+                    <small>ARPU: ¥0.00</small>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="icon">📱</div>
+                <div class="value">11,532</div>
+                <div class="label">iOS 用户</div>
+                <div class="sub-metrics">
+                    <small>Good率: 68.0%</small><br>
+                    <small>女性比例: 36.7%</small><br>
+                    <small>ARPU: ¥4.29</small>
+                </div>
+            </div>
+            
+            </div>
+            
+            <!-- 渠道行为特征排行 -->
+            <h3>🏆 渠道行为质量排行 (TOP10)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>排名</th>
+                        <th>渠道</th>
+                        <th>平台</th>
+                        <th>用户数</th>
+                        <th>女性比例</th>
+                        <th>ARPU</th>
+                        <th>行为评分</th>
+                        <th>等级</th>
+                    </tr>
+                </thead>
+                <tbody>
+        
+            <tr>
+                <td>1</td>
+                <td>Douyin</td>
+                <td>📱</td>
+                <td>30,390</td>
+                <td>47.9%</td>
+                <td>¥5.42</td>
+                <td>85.0</td>
+                <td><span style="color: #28a745; font-weight: bold;">优秀</span></td>
+            </tr>
+            
+            <tr>
+                <td>2</td>
+                <td>Huawei</td>
+                <td>🤖</td>
+                <td>10,232</td>
+                <td>26.5%</td>
+                <td>¥12.92</td>
+                <td>85.0</td>
+                <td><span style="color: #28a745; font-weight: bold;">优秀</span></td>
+            </tr>
+            
+            <tr>
+                <td>3</td>
+                <td>Xiaohongshu</td>
+                <td>📱</td>
+                <td>6,875</td>
+                <td>49.6%</td>
+                <td>¥7.70</td>
+                <td>85.0</td>
+                <td><span style="color: #28a745; font-weight: bold;">优秀</span></td>
+            </tr>
+            
+            <tr>
+                <td>4</td>
+                <td>Douyin</td>
+                <td>🤖</td>
+                <td>46,754</td>
+                <td>37.9%</td>
+                <td>¥8.87</td>
+                <td>80.0</td>
+                <td><span style="color: #17a2b8; font-weight: bold;">良好</span></td>
+            </tr>
+            
+            <tr>
+                <td>5</td>
+                <td>AppStore</td>
+                <td>📱</td>
+                <td>35,438</td>
+                <td>33.9%</td>
+                <td>¥5.50</td>
+                <td>80.0</td>
+                <td><span style="color: #17a2b8; font-weight: bold;">良好</span></td>
+            </tr>
+            
+            <tr>
+                <td>6</td>
+                <td>Chuanshanjia</td>
+                <td>🤖</td>
+                <td>6,793</td>
+                <td>10.6%</td>
+                <td>¥6.50</td>
+                <td>80.0</td>
+                <td><span style="color: #17a2b8; font-weight: bold;">良好</span></td>
+            </tr>
+            
+            <tr>
+                <td>7</td>
+                <td>Vivo</td>
+                <td>🤖</td>
+                <td>4,574</td>
+                <td>24.5%</td>
+                <td>¥6.52</td>
+                <td>80.0</td>
+                <td><span style="color: #17a2b8; font-weight: bold;">良好</span></td>
+            </tr>
+            
+            <tr>
+                <td>8</td>
+                <td>Xiaomi</td>
+                <td>🤖</td>
+                <td>4,493</td>
+                <td>17.9%</td>
+                <td>¥6.44</td>
+                <td>80.0</td>
+                <td><span style="color: #17a2b8; font-weight: bold;">良好</span></td>
+            </tr>
+            
+            <tr>
+                <td>9</td>
+                <td>GuangdiantongPYQ</td>
+                <td>🤖</td>
+                <td>4,292</td>
+                <td>10.3%</td>
+                <td>¥5.18</td>
+                <td>80.0</td>
+                <td><span style="color: #17a2b8; font-weight: bold;">良好</span></td>
+            </tr>
+            
+            <tr>
+                <td>10</td>
+                <td>Xiaohongshu</td>
+                <td>🤖</td>
+                <td>3,145</td>
+                <td>32.5%</td>
+                <td>¥7.11</td>
+                <td>80.0</td>
+                <td><span style="color: #17a2b8; font-weight: bold;">良好</span></td>
+            </tr>
+            
+                </tbody>
+            </table>
+            
+            <div style="margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 5px; font-size: 12px;">
+                <strong>📊 评分说明：</strong><br>
+                • 基础分50分，用户数量最多+20分，女性比例最多+15分，ARPU表现最多+15分<br>
+                • 优秀(85+分)：高价值用户群体，建议重点投入<br>
+                • 良好(70-84分)：稳定表现渠道，可持续投放<br>
+                • 一般(60-69分)：表现平庸，需要优化策略<br>
+                • 待优化(60分以下)：投放效果差，建议暂停或调整
+            </div>
+        </div>
+        
+        </main>
+        
+        
+        
+        <footer class="report-footer">
+            <div class="footer-info">
+                <div class="generation-time">
+                    报告生成时间: 2025-07-29 16:30:14
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">📊 模块化报告系统</a>
+                    <a href="#" class="footer-link">📈 业务数据分析</a>
+                    <a href="#" class="footer-link">🔧 系统设置</a>
+                </div>
+            </div>
+        </footer>
+        
+    </div>
+    
+    <script>
+        // 导航激活状态
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.module-container');
+            
+            // 点击导航链接时更新激活状态
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // 滚动时更新激活状态
+            window.addEventListener('scroll', function() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // 平滑滚动
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // 初始化第一个导航项为激活状态
+            if (navLinks.length > 0) {
+                navLinks[0].classList.add('active');
+            }
+            
+            // 动画效果
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // 观察所有模块容器
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+        });
+        
+        // 打印功能
+        function printReport() {
+            window.print();
+        }
+        
+        // 导出功能
+        function exportReport() {
+            alert('导出功能开发中...');
+        }
+    </script>
+        
+</body>
+</html>
+        
